@@ -1,0 +1,65 @@
+[project]
+name = "AgenticBusinessLawResearcher"
+version = "0.2.0"
+description = "Sistema jurídico de direito empresarial AI escalável com PydanticAI e LangGraph"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    # Core AI frameworks
+    "pydantic-ai>=0.1.8",
+    "langgraph>=0.4.1",
+    "pydantic-graph>=0.1.0",
+    # Base dependencies
+    "pydantic>=2.11.4",
+    "httpx>=0.27.0",
+    "aiofiles>=24.1.0",
+    # Retry and resilience
+    "tenacity>=9.0.0",
+    "asyncio-throttle>=1.0.2",
+    # Validation and typing
+    "typing-extensions>=4.12.0",
+    "annotated-types>=0.7.0",
+    # Logging and monitoring
+    "structlog>=24.4.0",
+    "loguru>=0.7.2",
+    # Database/Vector storage
+    "chroma-hnswlib>=0.7.6",
+    "chromadb>=1.0.7",
+    # Document processing
+    "pypdf>=5.4.0",
+    "pymupdf>=1.25.5",
+    # Environment and config
+    "python-dotenv>=1.0.0",
+    # Web interface
+    "streamlit>=1.32.0",
+    # Existing integrations (to maintain compatibility)
+    "langchain-core>=0.3.56",
+    "langchain-community>=0.3.23",
+    "tavily-python>=0.7.0",
+    # MCP support
+    "mcp>=1.1.0",
+    # Development tools
+    "ipykernel>=6.29.5",
+    "langfuse>=3.0.2",
+    "langchain-groq>=0.3.2",
+    "langchain-google-genai>=2.1.4",
+    "matplotlib>=3.10.3",
+    "playwright>=1.52.0",
+]
+
+[tool.uv]
+# virtual-environment = ".venv" # Linha removida/comentada - uv detecta automaticamente
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "A", "C4", "T20"]
+ignore = ["E501", "B008"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
